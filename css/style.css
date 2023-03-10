@@ -24,12 +24,19 @@ body {
   align-items: center;
   flex-direction: column;
 }
+.accordion__input:checked ~ .accordion__title .accordion__title-icon {
+  transform: rotate(45deg);
+}
 
 .accordion__label {
   font-weight: bold;
 }
 .accordion__content {
   display: none;
+}
+
+.accordion__content-image {
+	width: 300px;
 }
 
 .accordion__title {
@@ -39,7 +46,7 @@ body {
   align-items: center;
 }
 
-.meme-content__title-icon {
+.accordion__title-icon {
   width: 20px;
   height: 20px;
 }
