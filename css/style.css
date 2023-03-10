@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.accordion {
+    
+}
+.accordion__input {
+}
+
+.accordion__input:checked ~ .accordion__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.accordion__label {
+  font-weight: bold;
+}
+.accordion__content {
+  display: none;
+}
+
+.accordion__title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meme-content__title-icon {
+  width: 20px;
+  height: 20px;
+}
