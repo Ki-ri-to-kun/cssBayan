@@ -15,6 +15,15 @@ body {
 .accordion {
     
 }
+
+.accordion:hover .accordion__label{
+    color: #010101;
+}
+
+.accordion:hover .accordion__title-icon{
+  display: block;
+}
+
 .accordion__input {
 }
 
@@ -30,6 +39,11 @@ body {
 
 .accordion__label {
   font-weight: bold;
+  color: #0254CD;
+}
+
+.accordion__input:checked ~ .accordion__title .accordion__label{
+  color: #010101;
 }
 .accordion__content {
   display: none;
@@ -40,6 +54,8 @@ body {
 }
 
 .accordion__title {
+  
+  font-size: 20px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -47,6 +63,8 @@ body {
 }
 
 .accordion__title-icon {
+ display: none;
   width: 20px;
   height: 20px;
 }
+
