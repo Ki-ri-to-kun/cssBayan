@@ -16,6 +16,10 @@ body {
     background-color: #F5F5EB;
 }
 
+.accordion:hover {
+  cursor: pointer;
+}
+
 
 .accordion:hover .accordion__label{
     color: #010101;
@@ -25,38 +29,38 @@ body {
   display: block;
 }
 
-.accordion__input {
-}
-
 .accordion__content {
   display: none;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 .accordion__content-image {
 	width: 300px;
 }
 
-.accordion__input:checked ~ .accordion__content {
+.accordion__input:checked ~ .accordion__label > .accordion__content {
   display: flex;
 }
-.accordion__input:checked ~ .accordion__content .accordion__content-image{
+.accordion__input:checked ~ .accordion__label > .accordion__content .accordion__content-image{
   opacity: 1;
 }
-.accordion__input:checked ~ .accordion__title .accordion__title-icon {
+.accordion__input:checked ~ .accordion__label > .accordion__title .accordion__title-icon {
   transform: rotate(45deg);
 }
+.accordion__item {
+  margin-bottom: 1.5rem;
+}
 
-.accordion__item:hover > .accordion__input:not(:checked) ~ .accordion__content {
+.accordion__item:hover > .accordion__input:not(:checked) ~ .accordion__label > .accordion__content {
   animation: anima 2s forwards;
   display: flex;
 }
 
-.accordion__item:hover > .accordion__content .accordion__content-image {
-  opacity: 1;
+.accordion__item:hover > .accordion__input:not(:checked) ~ .accordion__label  .accordion__title-icon {
+  transition: all 0.3s;
 }
-.accordion__item:hover > .accordion__title .accordion__title-icon {
+
+.accordion__item:hover > .accordion__label .accordion__title .accordion__title-icon {
   transform: rotate(45deg);
 }
 
@@ -65,12 +69,11 @@ body {
   color: #0254CD;
 }
 
-.accordion__input:checked ~ .accordion__title .accordion__label{
+.accordion__input:checked ~ .accordion__label .accordion__title {
   color: #010101;
 }
 
 .accordion__title {
-  margin-bottom: 1rem;
   font-size: 20px;
   display: flex;
   justify-content: space-between;
