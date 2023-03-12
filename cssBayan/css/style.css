@@ -14,6 +14,7 @@ body {
 
 .accordion {
   background-color: #F5F5EB;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .accordion__heading {
@@ -112,6 +113,13 @@ body {
 
 .accordion__item:hover > .accordion__input:not(:checked) ~ .accordion__label .accordion__title .accordion__title-icon {
   transform: rotate(45deg);
+}
+}
+
+@media(hover: none){
+ .accordion__input:checked ~ .accordion__label > .accordion__content {
+  display: flex;
+   animation: anima 1s forwards;
 }
 }
 
