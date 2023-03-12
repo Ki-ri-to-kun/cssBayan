@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+    max-width: 65rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.accordion {
+  background-color: #F5F5EB;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.accordion__heading {
+  font-size: 1.5rem;
+}
+
+.accordion__line {
+  margin: 0;
+}
+
+.accordion__content {
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+}
+.accordion__content-image {
+	width: 17rem;
+}
+
+.accordion__input:checked ~ .accordion__label > .accordion__content {
+  display: flex;
+}
+.accordion__input:checked ~ .accordion__label > .accordion__content .accordion__content-image{
+  opacity: 1;
+}
+
+.accordion__item > .accordion__input:checked ~ .accordion__label .accordion__title .accordion__title-icon {
+  transform: rotate(45deg);
+}
+
+.accordion__label {
+  display: block;
+  padding: 1.5rem 0;
+  font-weight: bold;
+  color: #0254CD;
+}
+
+.accordion__input:active ~ .accordion__label .accordion__title {
+  color: #0254CD;
+}
+
+.accordion__input:checked ~ .accordion__label .accordion__title {
+  color: #010101;
+}
+
+.accordion__title {
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.accordion__title-text {
+  margin: 0 0 0.5rem 0;
+
+}
+
+.accordion__title-icon {
+ display: block;
+  width: 1rem;
+  height: 1rem;
+  transition: all 0.3s;
+}
+
+@keyframes anima{
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media(hover: hover){
+  .accordion__title-icon {
+    display: none;
+   }
+  .accordion:hover {
+    cursor: pointer;
+  }
+  .accordion:hover .accordion__label{
+    color: #010101;
+    cursor: pointer;
+}
+
+.accordion:hover .accordion__title-icon{
+  display: block;
+}
+.accordion__item:hover > .accordion__input:not(:checked) ~ .accordion__label > .accordion__content {
+  animation: anima 1s forwards;
+  display: flex;
+}
+
+.accordion__item:hover > .accordion__input:not(:checked) ~ .accordion__label .accordion__title .accordion__title-icon {
+  transform: rotate(45deg);
+}
+}
+
+@media(hover: none){
+ .accordion__input:checked ~ .accordion__label > .accordion__content {
+  display: flex;
+   animation: anima 1s forwards;
+}
+}
+
+@media(min-width: 768px){
+  .accordion {
+    padding: 1rem 4rem;
+}
+.accordion__title {
+  font-size: 1rem;
+}
+.accordion__title-icon {
+   width: 1.2rem;
+   height: 1.2rem;
+ }
+ .accordion__heading {
+  font-size: 2rem;
+}
+.accordion__content-image {
+	width: 19rem;
+}
+}
+
+@media(min-width: 1025px){
+  .accordion {
+    padding: 1.5rem 7rem;
+}
+.accordion__title {
+  font-size: 1.5rem;
+}
+.accordion__title-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.accordion__heading {
+  font-size: 2.5rem;
+}
+}
